@@ -30,19 +30,19 @@ const EnhancedMobileDemo = () => {
       type: "cashflow",
       title: "Financial overview",
       color: "from-blue-500 to-blue-600"
-    },
-    {
-      id: 5,
-      type: "payments",
-      title: "Payment Processing",
-      color: "from-green-500 to-green-600"
-    },
-    {
-      id: 6,
-      type: "analytics",
-      title: "Business Analytics",
-      color: "from-purple-500 to-purple-600"
     }
+    // {
+    //   id: 5,
+    //   type: "payments",
+    //   title: "Payment Processing",
+    //   color: "from-green-500 to-green-600"
+    // },
+    // {
+    //   id: 6,
+    //   type: "analytics",
+    //   title: "Business Analytics",
+    //   color: "from-purple-500 to-purple-600"
+    // }
   ];
 
   useEffect(() => {
