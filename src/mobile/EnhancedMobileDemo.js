@@ -27,22 +27,22 @@ const EnhancedMobileDemo = () => {
     },
     {
       id: 4,
+      type: "reconciliation",
+      title: "Fragmented systems",
+      color: "from-red-500 to-red-600"
+    },
+    {
+      id: 5,
+      type: "PAYMENTS",
+      title: "Expensive, slow & opaque",
+      color: "from-purple-500 to-purple-600"
+    },
+    {
+      id: 6,
       type: "cashflow",
       title: "Financial overview",
       color: "from-blue-500 to-blue-600"
-    }
-    // {
-    //   id: 5,
-    //   type: "payments",
-    //   title: "Payment Processing",
-    //   color: "from-green-500 to-green-600"
-    // },
-    // {
-    //   id: 6,
-    //   type: "analytics",
-    //   title: "Business Analytics",
-    //   color: "from-purple-500 to-purple-600"
-    // }
+    },
   ];
 
   useEffect(() => {
@@ -378,86 +378,194 @@ const EnhancedMobileDemo = () => {
                         </button>
                       </div>
                     </div>
-                  ) : screens[currentScreen].type === 'payments' ? (
+                  ) : screens[currentScreen].type === 'reconciliation' ? (
+                    /* Reconciliation Screen */
+                    <div className="h-full p-6 bg-gray-50">
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-6">
+                        <div>
+                          <p className="text-xs text-gray-500 uppercase tracking-wide">RECONCILIATION</p>
+                          <h2 className="text-xl font-semibold text-gray-800">Fragmented systems</h2>
+                        </div>
+                        <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center">
+                          <span className="text-orange-500 text-xs">!</span>
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="space-y-4">
+                        {/* Data across multiple systems */}
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-sm">×</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-red-800 text-sm mb-1">Data across multiple systems</h3>
+                              <p className="text-xs text-red-600 mb-3">Banks, gateways & ERPs don't talk to each other</p>
+                              
+                              <div className="space-y-2">
+                                <div className="flex items-center space-x-2 text-xs text-gray-600">
+                                  <div className="w-3 h-3 bg-gray-400 rounded-sm"></div>
+                                  <span>3 different banks</span>
+                                </div>
+                                <div className="flex items-center space-x-2 text-xs text-gray-600">
+                                  <div className="w-3 h-3 bg-blue-400 rounded-sm"></div>
+                                  <span>5 payment gateways</span>
+                                </div>
+                                <div className="flex items-center space-x-2 text-xs text-gray-600">
+                                  <div className="w-3 h-3 bg-purple-400 rounded-sm"></div>
+                                  <span>2 ERP systems</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Manual reconciliation */}
+                        <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-sm">!</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-orange-800 text-sm mb-1">Manual reconciliation</h3>
+                              <p className="text-xs text-orange-600 mb-3">Finance teams spend hours stitching data</p>
+                              
+                              <div className="grid grid-cols-2 gap-3 text-xs">
+                                <div>
+                                  <p className="text-gray-500">Weekly hours</p>
+                                  <p className="font-medium text-gray-800">18-24h</p>
+                                </div>
+                                <div>
+                                  <p className="text-gray-500">Error rate</p>
+                                  <p className="font-medium text-gray-800">12-15%</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Delayed financial insights */}
+                        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-8 h-8 bg-gray-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-sm">📊</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-gray-800 text-sm mb-1">Delayed financial insights</h3>
+                              <p className="text-xs text-gray-600 mb-3">Data silos prevent real-time visibility</p>
+                              
+                              <div className="space-y-2 text-xs">
+                                <div className="flex justify-between">
+                                  <span className="text-gray-500">Time to reconcile</span>
+                                  <span className="font-medium text-gray-800">3-5 days</span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span className="text-gray-500">Discrepancies found</span>
+                                  <span className="font-medium text-orange-600">47 this month</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ) : screens[currentScreen].type === 'PAYMENTS' ? (
                     /* Payment Processing Screen */
                     <div className="h-full p-6 bg-gray-50">
                       {/* Header */}
                       <div className="flex items-center justify-between mb-6">
                         <div>
                           <p className="text-xs text-gray-500 uppercase tracking-wide">PAYMENTS</p>
-                          <h2 className="text-xl font-semibold text-gray-800">Payment Processing</h2>
+                          <h2 className="text-xl font-semibold text-gray-800">Expensive, slow & opaque</h2>
                         </div>
-                        <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                          <span className="text-green-500 text-xs">💳</span>
+                        <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center">
+                          <span className="text-red-500 text-xs">📉</span>
                         </div>
                       </div>
 
-                      {/* Transaction Card */}
-                      <div className="bg-white border border-gray-200 rounded-lg p-4 mb-4">
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
-                              <span className="text-green-600 text-sm">✓</span>
+                      {/* Content */}
+                      <div className="space-y-4">
+                        {/* Unpredictable payment cycles */}
+                        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-sm">⏰</span>
                             </div>
-                            <div>
-                              <h3 className="font-medium text-gray-800 text-sm">Global Tech Solutions</h3>
-                              <p className="text-xs text-gray-500">Transaction #TXN-2024-5847</p>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-red-800 text-sm mb-1">Unpredictable payment cycles</h3>
+                              <p className="text-xs text-red-600 mb-3">Overseas clients follow their own schedules</p>
+                              
+                              <div className="space-y-2">
+                                <div className="flex justify-between text-xs text-gray-600">
+                                  <div className="flex items-center space-x-2">
+                                    <span className="text-blue-500">🇮🇳</span>
+                                    <span>India clients</span>
+                                  </div>
+                                  <span className="font-medium">45-60 days</span>
+                                </div>
+                                <div className="flex justify-between text-xs text-gray-600">
+                                  <div className="flex items-center space-x-2">
+                                    <span className="text-green-500">🇦🇪</span>
+                                    <span>UAE clients</span>
+                                  </div>
+                                  <span className="font-medium">30-90 days</span>
+                                </div>
+                                <div className="flex justify-between text-xs text-gray-600">
+                                  <div className="flex items-center space-x-2">
+                                    <span className="text-blue-500">🇬🇧</span>
+                                    <span>UK clients</span>
+                                  </div>
+                                  <span className="font-medium">30-45 days</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                          <span className="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Completed</span>
                         </div>
-                        <div className="space-y-2 text-xs">
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">Amount</span>
-                            <span className="font-medium">$25,890.00</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">From</span>
-                            <span className="font-medium">USD → EUR</span>
-                          </div>
-                          <div className="flex justify-between">
-                            <span className="text-gray-600">Processing time</span>
-                            <span className="font-medium">2.3 seconds</span>
-                          </div>
-                        </div>
-                      </div>
 
-                      {/* Multi-currency Support */}
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                        <h3 className="font-medium text-gray-800 text-sm mb-3">Multi-currency support</h3>
-                        <div className="grid grid-cols-4 gap-2 text-xs">
-                          <div className="text-center">
-                            <p className="font-medium">USD</p>
-                            <p className="text-gray-600">$1.00</p>
-                          </div>
-                          <div className="text-center">
-                            <p className="font-medium">EUR</p>
-                            <p className="text-gray-600">€0.85</p>
-                          </div>
-                          <div className="text-center">
-                            <p className="font-medium">GBP</p>
-                            <p className="text-gray-600">£0.79</p>
-                          </div>
-                          <div className="text-center">
-                            <p className="font-medium">INR</p>
-                            <p className="text-gray-600">₹83.2</p>
+                        {/* Hidden FX margins */}
+                        <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-sm">$</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-orange-800 text-sm mb-1">Hidden FX margins</h3>
+                              <p className="text-xs text-orange-600 mb-3">Banks add 2-4% on exchange rates</p>
+                              
+                              <div className="grid grid-cols-2 gap-3 text-xs">
+                                <div>
+                                  <p className="text-gray-500">FX markup</p>
+                                  <p className="font-medium text-gray-800">2.5%</p>
+                                </div>
+                                <div>
+                                  <p className="text-gray-500">Transfer fees</p>
+                                  <p className="font-medium text-gray-800">$35-75</p>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Stats */}
-                      <div className="space-y-2 text-xs">
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Daily volume</span>
-                          <span className="font-medium text-green-600">$2.4M</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Success rate</span>
-                          <span className="font-medium text-green-600">99.7%</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600">Avg processing</span>
-                          <span className="font-medium">1.8s</span>
+                        {/* Slow settlements */}
+                        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-8 h-8 bg-gray-400 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <span className="text-white text-sm">⚠️</span>
+                            </div>
+                            <div className="flex-1">
+                              <h3 className="font-medium text-gray-800 text-sm mb-1">Slow settlements</h3>
+                              <p className="text-xs text-gray-600 mb-3">Tracking becomes difficult across borders</p>
+                              
+                              <div className="space-y-2 text-xs">
+                                <div className="flex justify-between">
+                                  <span className="text-gray-500">Avg settlement time</span>
+                                  <span className="font-medium text-red-600">5-7 days</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -612,6 +720,28 @@ const EnhancedMobileDemo = () => {
             <h3 className="text-xl font-bold text-gray-800 mb-4">Manual Invoicing</h3>
             <p className="text-gray-600 leading-relaxed">
               Invoicing is inconsistent across contries, with different formats,currencies, and tax requirements slowing operations .
+            </p>
+          </div>
+        )}
+        
+        {/* Problem Box - Only for reconciliation screen */}
+        {screens[currentScreen].type === 'reconciliation' && (
+          <div className="fixed bottom-20 right-20 w-80 bg-white rounded-lg shadow-xl p-6 z-30">
+            <p className="text-sm text-blue-500 uppercase tracking-wide mb-2">PROBLEM</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Fragmented reconciliation</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Data scattered across banks, gateways, and ERPs creates reconciliation nightmares and operational inefficiency.
+            </p>
+          </div>
+        )}
+        
+        {/* Problem Box - Only for payments screen */}
+        {screens[currentScreen].type === 'PAYMENTS' && (
+          <div className="fixed bottom-20 left-20 w-80 bg-white rounded-lg shadow-xl p-6 z-30">
+            <p className="text-sm text-blue-500 uppercase tracking-wide mb-2">PROBLEM</p>
+            <h3 className="text-xl font-bold text-gray-800 mb-4">Expensive & slow collections</h3>
+            <p className="text-gray-600 leading-relaxed">
+              Cross-border payments are slow, expensive, and opaque. Hidden FX margins and unpredictable settlement times drain resources.
             </p>
           </div>
         )}
